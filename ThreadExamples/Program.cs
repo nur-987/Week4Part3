@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace ThreadExamples
 {
+    /// <summary>
+    /// BASIC
+    /// Thread.Start
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -33,7 +37,6 @@ namespace ThreadExamples
         {
             Thread td = new Thread(Print);
             td.Start();
-            //td.Join();
 
         }
 

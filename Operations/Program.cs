@@ -56,9 +56,12 @@ namespace Operations
             }
             else
             {
-                throw new MyArgumentException("two operants cannto be the same");
+                throw new MyArgumentException("two operants cannot be the same");
             }
 
+            /*(a!=b) not working
+             * check is not happening properly
+             */
         }
     }
 }
