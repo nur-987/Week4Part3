@@ -29,7 +29,7 @@ namespace ThreadExamples
             //}
             #endregion
 
-
+            #region Compring thread syncronous, asyncronous
             ThreadExample t = new ThreadExample();
 
             Console.WriteLine("Nomal display");
@@ -37,6 +37,10 @@ namespace ThreadExamples
 
             Console.WriteLine("Async display");
             t.DisplayAsync(); //=> running async with thread
+            #endregion
+
+            Thread tp = new Thread( new ParameterizedThreadStart(t.DisplayWithParams));
+            tp.Start("This is a new Thread with Param");
 
             Console.ReadLine();
         }
@@ -63,6 +67,16 @@ namespace ThreadExamples
             t1.Start();
 
             Console.WriteLine("end of thread");
+        }
+
+        public void DisplayWithParams(object str) //can only be object
+        {
+            for(int i = 0; i<10; i++)
+            {
+                Thread.Sleep(2000);
+                Console.WriteLine("In Display method " + str.ToString());
+                                   //str is the parameter (object) passed from the function 
+            }
         }
     }
 
